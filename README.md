@@ -21,7 +21,7 @@ Below are the files I just added to the pipeline seeded in the homework reposiro
 	* a boxplot showing the distribution of the length of words starting with different alphabets is then plotted using ggplot
 	* FInal, this file shows the result of the analysis done in the pipeline seeded in the homework repository
 	
-Here is a link to this exercise [Jenny Bryan's 2014 exercise](https://github.com/jennybc?tab=overview&from=2014-03-01&to=2014-03-31)
+Here is a link to this exercise [Words analysis](https://github.com/STAT545-UBC-students/hw09-iyaniwura/tree/master/Words)
 	
 	
 In addition to modifying the seeded pipeline, I also created a new pipeline. This pipeline uses the `gapminder` data set and contains 4 files including the `Makefile`. Below is a brief description of the pipeline and the file it contains; 
@@ -42,7 +42,7 @@ Targets                       | dependencies |
 
 
 
-Here is a link to this exercise [Jenny Bryan's 2014 exercise](https://github.com/jennybc?tab=overview&from=2014-03-01&to=2014-03-31)
+Here is a link to this exercise [Gapminder analysis](https://github.com/STAT545-UBC-students/hw09-iyaniwura/tree/master/Gapminder)
 	
 	
 
