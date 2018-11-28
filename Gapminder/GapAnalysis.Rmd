@@ -1,0 +1,65 @@
+---
+title: "Gapminder plots"
+author: "Sarafa Iyaniwura"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+Let us beging by loading the necessary packages required for this exercise
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+```
+
+
+We begin by loading the extracted gapminder data for Nigeria only from the `gap_extract.csv` file. Let us use this data for some exercise
+
+```{r}
+gap_data <- read.csv(file="gap_extract.csv", header = TRUE, sep=",")
+```
+
+Let us display the structure of the data frame we extracted:
+
+```{r}
+str(gap_data)
+```
+
+we can also view the first few rows of the data 
+
+```{r}
+gap_data %>% 
+	head() %>%
+	knitr::kable()
+```
+
+Let us plot the `gdpPercap` vs `LifeExp`
+
+```{r}
+gap_data %>%
+	ggplot(aes(lifeExp,gdpPercap) ) + 
+	geom_point() +  ggtitle("Gdp per Cap vs Life expectancy for Nigeira")
+```
+
+Let us plot the `pop` vs `LifeExp`
+
+```{r}
+gap_data %>%
+	ggplot(aes(lifeExp,pop) ) + 
+	geom_point() +  ggtitle("Population vs Life expectancy for Nigeira")
+```
+
+
+Let us extract some columns of the `gad_data` and write it into a file in `.csv` format
+
+```{r}
+Nig_data <- gap_data %>%
+	select(year,gdpPercap,pop,lifeExp)
+
+write.csv(Nig_data,"Nig_data.csv",row.names = FALSE, quote = FALSE)
+
+```
+
+

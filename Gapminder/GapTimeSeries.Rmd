@@ -1,0 +1,59 @@
+---
+title: "Gapminder time series"
+author: "Sarafa Iyaniwura"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+Let us beging by loading the necessary packages required for this exercise
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+```
+
+
+We begin by loading the extracted  data frame from the `Nig_data.csv` file. We shall use the data to produce time series graphs of `gdpPercap`, `lifeExp`, and `pop` (population)
+
+```{r}
+Nig_df <- read.csv(file="Nig_data.csv", header = TRUE, sep=",")
+```
+
+
+we can also view the first few rows of the data as follows
+
+```{r}
+Nig_df %>% 
+	head() %>%
+	knitr::kable()
+```
+
+Let us plot the `gdpPercap` for Nigeria over time from 1952 to 2007
+
+```{r}
+Nig_df %>%
+	ggplot(aes(year,gdpPercap) ) +  
+	geom_point() +  ggtitle("Time series of gdp per capital for Nigeria")
+```
+
+`lifeExp` for Nigeria over time from 1952 to 2007
+
+```{r}
+Nig_df %>%
+	ggplot(aes(year,lifeExp ))  + 
+	geom_point() +  ggtitle("Time series of  life expectancy of Nigeira")
+```
+
+
+`pop` for Nigeria over time from 1952 to 2007
+
+```{r}
+Nig_df %>%
+	ggplot(aes(year,pop)) + 
+	geom_point() +  ggtitle("Time series of population of Nigeira")
+
+```
+
+

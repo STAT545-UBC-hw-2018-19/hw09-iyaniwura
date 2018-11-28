@@ -1,0 +1,54 @@
+---
+title: "First Character of Words Analysis"
+author: "Sarafa Iyaniwura"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+## In this file, we do some analysis of the data extracted from the `words.txt` data set
+
+Let us begin by loading the necessary packages required for this exercise
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(ggplot2))
+```
+
+
+Next, we  load the extracted data from file. This is the data containing words starting from with the alphabets A-I (both lower and upper case)
+
+```{r}
+sub_data <- read.csv(file="df_words.csv", header = TRUE, sep=",")
+```
+
+Let us display the structure of the data frame we created
+
+```{r}
+str(sub_data)
+```
+
+we can also view the first few rows of the data frame
+
+```{r}
+sub_data %>% 
+	head(10) %>%
+	knitr::kable()
+```
+
+Let us plot a boxplot showing the distribution of the  length of words whose first characters are the alphabets a-i.
+
+```{r}
+sub_data %>%
+	ggplot(aes(First.alp,length) ) + 
+		geom_boxplot()  + labs(x = "First alphabets of the word")   + 
+		ggtitle("The distribution of  the length of words starting  with alphabets  A-I")
+```
+
+
+Below is the result of the analysis done in the pipeline seeded with the homework repository. This analysis shows the distribution of the length words in the data set. Here is a histogram of word lengths.
+
+![*Fig. 1* A histogram of English word lengths](histogram.png)
+
+
