@@ -17,11 +17,6 @@ Targets                       | dependencies |
 
 
 
-Here is a link to this exercise [Gapminder analysis](https://github.com/STAT545-UBC-students/hw09-iyaniwura/tree/master/Gapminder)
-	
-	
-
-
 <br>
 
 2. GapData_Extract.R: This file depends on the `gapminder` data set and performs the following functions; 
