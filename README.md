@@ -75,4 +75,4 @@ Here is a link to this exercise [Gapminder analysis](https://github.com/STAT545-
 	
 Acknowledgement:
 
-The original pipeline was created by [Jenny Bryan](https://github.com/jennybc?tab=overview&from=2014-03-01&to=2014-03-31). 
+The words pipeline was original created by [Jenny Bryan](https://github.com/jennybc?tab=overview&from=2014-03-01&to=2014-03-31). 
