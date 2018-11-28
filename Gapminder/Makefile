@@ -7,7 +7,7 @@ clean:
 GapAnalysis.html: GapAnalysis.Rmd gap_extract.csv
 	Rscript -e 'rmarkdown::render("$<")'
 
-Nig_data.csv: GapAnalysis.Rmd gap_extract.csv
+Nig_data.csv: GapAnalysis.Rmd
 	Rscript -e 'rmarkdown::render("$<")'
 	
 GapTimeSeries.html: GapTimeSeries.Rmd Nig_data.csv
